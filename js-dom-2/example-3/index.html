@@ -12,13 +12,22 @@
     <div id="dive"></div>
   </body>
   <script type="text/javascript">
+    // const createHTML = () => {
+    //   const fullname = document.querySelector("#fullname");
+    //   const nickname = document.querySelector("#nickname");
+
+    //   const dive = document.querySelector("#dive");
+    //   dive.innerHTML =
+    //     "<h1>" + fullname.value + "</h1>" + "<h4>" + nickname.value + "</h4>";
+    // };
+
     const createHTML = () => {
-      const fullname = document.querySelector("#fullname");
-      const nickname = document.querySelector("#nickname");
+      const fullname = document.querySelector("#fullname").value;
+      const nickname = document.querySelector("#nickname").value;
 
       const dive = document.querySelector("#dive");
-      dive.innerHTML =
-        "<h1>" + fullname.value + "</h1>" + "<h4>" + nickname.value + "</h4>";
+      dive.innerHTML = 
+        "<h1>" + "Welcome, " + fullname + " " + nickname;
     };
   </script>
 </html>

@@ -1,6 +1,7 @@
 import "./App.css";
 
 function App() {
+  // member is ARRAY containing OBJECT.
   const members = [
     {
       name: "Mock J",

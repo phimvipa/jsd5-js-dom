@@ -9,16 +9,19 @@
     <input id="fullname" type="text" placeholder="Full Name" />
     <input id="nickname" type="text" placeholder="NickName" />
     <button onClick="createHTML()">Submit</button>
-    <ul></ul>
+    <ul id="dive"></ul>
   </body>
   <script type="text/javascript">
     const createHTML = () => {
-      const fullname = document.querySelector("#fullname");
-      const nickname = document.querySelector("#nickname");
+      const fullname = document.querySelector("#fullname").value;
+      const nickname = document.querySelector("#nickname").value;
 
       // select ul first here
-      const dive = document.querySelector("....");
-      dive.innerHTML = // code here
+      const dive = document.querySelector("#dive");
+      dive.innerHTML =
+      "<h1>" + "<li>"
+      + fullname
+      + nickname; 
     };
   </script>
 </html>

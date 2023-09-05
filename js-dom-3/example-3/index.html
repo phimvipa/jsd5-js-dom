@@ -15,12 +15,18 @@
     <div id="textDiv"></div>
 
     <script>
-      const input = document.getElementById("myInput");
-      function userTyping(event) {
-        const newValue = event.target.value;
-        const textDiv = document.querySelector("#textDiv");
-        textDiv.innerHTML = newValue;
-      }
+      // const input = document.getElementById("myInput");
+      // function userTyping(event) {
+      //   const newValue = event.target.value;
+      //   const textDiv = document.querySelector("#textDiv");
+      //   textDiv.innerHTML = newValue;
+      // }
+
+      const userTyping = (event) => {
+        const textdiv = document.querySelector("#textdiv").value;
+        textdiv.innerHTML = event.target.value;
+      };
+
     </script>
   </body>
 </html>

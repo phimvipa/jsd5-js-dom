@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h2>Enter Data</h2>
+        <div>
+            <label for="namelabel">Name:</label>
+            <input type="text" id="name" name="name">
+        </div>
+        <div>
+            <label for="agelabel">Age:</label>
+            <input type="number" id="age" name="age">
+        </div>
+        <div>
+            <label for="weightlabel">Weight:</label>
+            <input type="number" id="weight" name="weight">
+        </div>
+        <div>
+            <label for="crlabel">Current Running (Minute):</label>
+            <input type="number" id="cr" name="currentrun">
+        </div>
+        <button type="submit" onclick="addClick()">Add detail</button>
+    </div>
+
+    <div>
+        <h2>Entered Data</h2>
+        <div>
+            <table id="table-display" border="1" cellpadding="6">
+            <thead>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Weight</th>
+                <th>Current Running (Minutes)</th>
+                <th>Good Running</th>
+            <!-- <tbody>
+                <td id="namedisplay"></td>
+                <td id="agedisplay"></td>
+                <td id="weightdisplay"></td>
+                <td id="crdisplay"></td>
+                <td id="grdisplay"></td>
+            </tbody> -->
+            </thead>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        function addClick() {
+            const Nameinput = document.querySelector("#name");
+            const Ageinput = document.querySelector("#age");
+            const Weightinput = document.querySelector("#weight");
+            const Crinput = document.querySelector("#cr");
+
+            // console.log (
+            //     name.value, age.value, weight.value, cr.value
+            // );
+
+            const TableDisplay = document.querySelector("#table-display");
+            const
+            TableDisplay.innerHTML =
+                Nameinput.value,
+                Ageinput.value,
+                Weightinput.value,
+                Crinput.value;
+        };
+
+
+    </script>
+</body>
+</html>

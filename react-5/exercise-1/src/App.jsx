@@ -9,9 +9,10 @@ const App = () => {
   const [singleMember, setSingleMember] = useState([]);
 
   useEffect(() => {
-    const getData ______fill the blank here_______ {
-      const response = await axios();
-      // set member here
+    const getData = async () => {
+      const response = await axios.get(
+      "https://jsd5-mock-backend.onrender.com//members");
+      setMembers(response.data)
     };
 
     getData();

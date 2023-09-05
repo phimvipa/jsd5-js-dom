@@ -5,42 +5,43 @@ function App() {
   const temp = 90;
   return (
     <div id="app">
-      <Header />
-      <Content temperature={temp} />
+      <Header temperature={temp}/>
+      <Content tempContent={temp} />
       <Footer />
     </div>
   );
 }
 
-function Header() {
+function Header(props) {
+  const tempInHeader = props.temperature;
   return (
     // Code for Header
     // <Header />
     <header>
       <span>Turn on / off</span>
-      <p>Current Temperature: XXX</p>
+      <p>Current Temperature: {tempInHeader}</p>
     </header>
   );
 }
 
 function Content(props) {
-  const temperature = props.temperature;
+  const tempInContent = props.tempContent;
   return (
     // Code for Content
     // <Content />
     <div>
-      <Temperature temperature={temperature} />
+      <Temperature tempTemperature={tempInContent} />
     </div>
   );
 }
 
 function Temperature(props) {
-  const temperature = props.temperature;
+  const tempInTemperature = props.tempTemperature;
   return (
     // Code for Temperature
     // <Temperature />
     <div id="temperature">
-      <span>{temperature} Oc</span>
+      <span>{tempInTemperature} Oc</span>
     </div>
   );
 }
