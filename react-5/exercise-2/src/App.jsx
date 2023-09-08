@@ -6,11 +6,27 @@ import Form from "./Form";
 
 const App = () => {
   const [members, setMembers] = useState([]);
-
+  const [_updates, _setUpdates] = useStage(false);
   // started life cycle here
 
-  // update here
+  useEffect(() => {
+    const getData = async () => {
+      const response = await axios.get(
+      "https://jsd5-mock-backend.onrender.com//members");
+      setMembers(response.data);
+    };
 
+    getData();
+  }, [_updates]);
+
+  // update here
+  const updateData = {id, name, age, weight, status} => {
+    const objData = {
+      id, name, age, weight, status
+    }
+    axios.post("https://jsd5-mock-backend.onrender.com//members" , objData)
+    _setUpdates();
+  }
   // create here
 
   return (

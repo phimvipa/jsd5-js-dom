@@ -1,10 +1,11 @@
 import usePost from "./hook/usePost";
 import "./App.css";
 
+// งานรีบตามเพื่อนไม่ทันเลยไม่ได้ทำเอง 
 function App() {
   const { get, remove } = usePost();
-
-  const posts = [
+  const 
+  const postsData = get()
     {
       author: "User 1",
       avatar: "https://cdn.pixabay.com/photo/2017/09/01/00/15/png-2702691_640.png",
@@ -32,7 +33,7 @@ function App() {
     <div id="app">
       <h1>Enter Data</h1>
       <PostContainer />
-      <FeedSection postData={posts} />
+      <FeedSection postData={postsData} removeHandler={remove}/>
     </div>
   );
 }
@@ -58,17 +59,19 @@ const PostContainer = () => {
   );
 };
 
-const FeedSection = ({ postData }) => {
+const FeedSection = ({ postData, removeHandler }) => {
   return (
     <div className="feed">
       {postData.map((post) => {
         return (
           <Post
+            id={post.id}
             author={post.author}
             avatar={post.avatar}
             time={post.time}
             content={post.content}
             image={post.image}
+            removeHandler={removeHandler}
           />
         );
       })}
@@ -77,7 +80,7 @@ const FeedSection = ({ postData }) => {
 };
 
 const Post = (props) => {
-  const {author, avatar, time, content, image} = props;
+  const {id, author, avatar, time, content, image, removeHandler} = props;
   return (
     <div class="post">
     <div class="post-header">
@@ -97,7 +100,7 @@ const Post = (props) => {
       src={image}
       alt="Post 1"
     />
-    <button>DELETE</button>
+    <button onClick={() => removeHandler(id)}>DELETE</button>
   </div>
   );
 };

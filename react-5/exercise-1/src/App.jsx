@@ -11,8 +11,8 @@ const App = () => {
   useEffect(() => {
     const getData = async () => {
       const response = await axios.get(
-      "https://jsd5-mock-backend.onrender.com//members");
-      setMembers(response.data)
+      "https://jsd5-mock-backend.onrender.com/members");
+      setMembers(response.data);
     };
 
     getData();
@@ -20,9 +20,14 @@ const App = () => {
 
   const getDataById = async (id) => {
     // call axios here
+    const response = await axios.get(
+      `https://jsd5-mock-backend.onrender.com/members/${id}`
+    );
 
     if (response.status === 200 && response.data) {
-      // set data here
+      // set data here 
+      const data = response.data;
+      setSingleMembers(data);
     }
   };
 
