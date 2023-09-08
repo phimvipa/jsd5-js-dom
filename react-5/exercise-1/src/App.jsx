@@ -6,13 +6,12 @@ import "./App.css";
 const App = () => {
   const [members, setMembers] = useState([]);
 
-  const [singleMember, setSingleMember] = useState([]);
+  const [singleMember, setSingleMember] = useState({});
 
   useEffect(() => {
-    const getData = async () => {
-      const response = await axios.get(
-      "https://jsd5-mock-backend.onrender.com/members");
-      setMembers(response.data);
+    const getData ______fill the blank here_______ {
+      const response = await axios();
+      // set member here
     };
 
     getData();
@@ -25,9 +24,7 @@ const App = () => {
     );
 
     if (response.status === 200 && response.data) {
-      // set data here 
-      const data = response.data;
-      setSingleMembers(data);
+      // set data here
     }
   };
 
@@ -35,7 +32,6 @@ const App = () => {
     <div className="container">
       <h1>All Data</h1>
       <div>
-        
         {members.map((member) => (
           <Card
             age={member.age}
